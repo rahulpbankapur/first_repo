@@ -1,2 +1,6 @@
 In master
 Adding locally
+<<<<<<< Updated upstream
+=======
+..........
+>>>>>>> Stashed changes

@@ -1,0 +1,16 @@
+name : first_workflow
+
+on:
+ push
+
+jobs:
+  echo-statement:
+    runs-on: ubuntu-latest
+    steps:
+     - name: echo
+       run: echo "first workflow"
+  workflow:
+    runs-on: windows-latest
+    steps:
+     - name: echo
+       run: echo "first workflow test"

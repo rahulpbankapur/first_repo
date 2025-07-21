@@ -10,6 +10,7 @@ jobs:
      - name: echo
        run: echo "first workflow"
   workflow:
+    needs: echo-statement
     runs-on: windows-latest
     steps:
      - name: echo

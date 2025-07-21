@@ -1,8 +1,9 @@
 name : first_workflow
 
 on:
- [push,pull_request]
-
+ push:
+    branches:
+     - main
 jobs:
   echo-statement:
     runs-on: ubuntu-latest

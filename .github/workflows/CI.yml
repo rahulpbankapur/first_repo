@@ -1,11 +1,10 @@
 
-name: Java setup
+name: CI process
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch:
 
 jobs:
-  setup-java:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,7 +14,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'microsoft'
-      - run: mvn --batch-mode  --update-snapshots verify
+      - run: mvn --batch-mode --update-snapshots verify
       - run: mkdir staging && cp target/*.jar staging
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3.0.1

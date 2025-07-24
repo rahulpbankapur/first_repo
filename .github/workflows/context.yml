@@ -1,0 +1,30 @@
+
+name: Github Env secrets Vars Matrix Context
+
+env:
+ MY_VAR: 'Workflow'
+on:
+ workflow_dispatch
+jobs:
+ Context:
+  env:
+   MY_VAR: 'jobs'
+  strategy:
+   matrix:
+     os: 
+       - ubuntu-latest
+       - windows-latest
+  runs-on: ${{matrix.os}}
+  steps:
+   - name: Print 
+   
+     run: |
+      echo 'Actor ${{github.actor}}'
+      echo 'Event ${{github.event_name}}'
+      echo 'Reference detail ${{github.ref}}'
+      echo 'sha value ${{github.sha}}'
+      echo 'Run details ${{github.run_id}}'
+      echo 'Runner number details ${{github.run_number}}'
+      echo 'Username is ${{secrets.USERNAME}}'
+      
+     
